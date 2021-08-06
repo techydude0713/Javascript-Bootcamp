@@ -1,1 +1,18 @@
+.navbar
+{
+  font-family:Arial;
+}
 
+.av
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+}
+.card{
+  font-family: Helvetica;
+  font-size: 15px;
+  float: left;
+  margin: 10px
+}
