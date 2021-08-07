@@ -14,5 +14,9 @@
   font-family: Helvetica;
   font-size: 15px;
   float: left;
-  margin: 10px
+  margin: 10px;
+}
+.navbar-fix-home
+{
+  margin-top: 10%;
 }

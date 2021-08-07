@@ -69,7 +69,6 @@ async function spawnProjects()
   const short_response = await fetch(short);
   const main_projects = await short_response.json();
   let cards = document.getElementById("cards");
-  console.log("OK!");
   for (let info of json)
   {
     let description = "<i>No description available...</i>"
@@ -103,7 +102,6 @@ async function spawnProjects()
     }
     cards.innerHTML += `<h5 class=\"card-title\">${info.name}</h5>\n      <h6 class=\"card-subtitle mb-2 text-muted\">${info.year}</h6>\n      <p class=\"card-text\">${info.description}</p>\n      <a href=\"#\" class=\"card-link\">${info.url}</a>\n      </div>\n  </div>\n  `
     */
-    console.log(info);
   }
   //`\n    <div class=\"card\" style=\"width: 18rem;\">\n    <div class=\"card-body\">\n      <img src=\"data/images/${imagepath}\" class=\"card-img-top\" alt=\"${name}\">\n      <h5 class=\"card-title\">${name}</h5>\n      <h6 class=\"card-subtitle mb-2 text-muted\">${year}</h6>\n      <p class=\"card-text\">${description}</p>\n      <a href=\"#\" class=\"card-link\">${url}</a>\n      </div>\n  </div>\n  `
   //`\n    <div class=\"card\" style=\"width: 18rem;\">\n    <div class=\"card-body\">\n      <img src=\"data/images/${info.imagepath}\" class=\"card-img-top\" alt=\"${info.name}\">\n      <h5 class=\"card-title\">${info.name}</h5>\n      <h6 class=\"card-subtitle mb-2 text-muted\">${info.year}</h6>\n      <p class=\"card-text\">${info.description}</p>\n      <a href=\"${info.url}\" class=\"card-link\">Run</a>\n      </div>\n  </div>\n  `
