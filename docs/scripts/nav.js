@@ -120,6 +120,14 @@ async function spawnOneTOTD()
   let date = `<h1>${content.date}</h1>`;
   let story = content.story;
   let media = "";
+
+  if (content.marqueeSize)
+  {
+    console.log("test")
+    story = story.replace("<marquee",`<marquee width="${content.marqueeSize}"`);
+    console.log(story)
+  }
+
   if(content.media)
   {
     switch(content.media)
@@ -164,6 +172,7 @@ async function spawnTOTD()
   let first = true;
   for (let a of json_sorted)
   {
+    let width = 332.39
     let date = a.date;
     let story = a.story;
     let media = "";
@@ -202,7 +211,7 @@ async function spawnTOTD()
         }
       }
     }
-    element.innerHTML += `\n    <div class=\"card${todate}\" style=\"width: 20.9rem;\">\n    <div class=\"card-body\">\n      ${media}<h5 class=\"card-title\">${date}</h5>\n      <p class=\"card-text\">${story}</p>\n    </div>\n  </div>\n  `
+    element.innerHTML += `\n    <div class=\"card${todate}\" style=\"width: ${width}px;\">\n    <div class=\"card-body\">\n      ${media}<h5 class=\"card-title\">${date}</h5>\n      <p class=\"card-text\">${story}</p>\n    </div>\n  </div>\n  `
     //`\n    <div class=\"card\" style=\"width: 18rem;\">\n    <div class=\"card-body\">\n      <img src=\"...\" class=\"card-img-top\" alt=\"...\">\n      <h5 class=\"card-title\">${date}</h5>\n      <p class=\"card-text\">${story}</p>\n    </div>\n  </div>\n  `
 
   }
